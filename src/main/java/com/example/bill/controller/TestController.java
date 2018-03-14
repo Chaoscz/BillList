@@ -19,9 +19,8 @@ public class TestController {
 
     @GetMapping("/")
     public ResultVO test(){
-        TestVO testVO = new TestVO();
-        testVO.setUserId(1);
-        testVO.setUserName("glacier");
+        TestVO testVO = new TestVO(1,"glacier");
+
         return ResultVOUtil.success(testVO);
     }
 

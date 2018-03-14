@@ -5,8 +5,8 @@ import lombok.Data;
 
 /**
  * @author glacier
- * @Title: ${file_name}
- * @Description: ${todo}
+ * @Title: TestVO
+ * @Description: TestVO
  * @date 2018/3/14 17:40
  */
 
@@ -18,4 +18,12 @@ public class TestVO {
 
     @JsonProperty("userName")
     private String UserName;
+
+    public TestVO() {
+    }
+
+    public TestVO(Integer userId, String userName) {
+        UserId = userId;
+        UserName = userName;
+    }
 }

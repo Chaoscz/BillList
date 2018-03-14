@@ -11,12 +11,12 @@ import lombok.Getter;
 @Getter
 public enum BillTypeStatusEnum {
 
-    eat(1,"吃"),
-    wear(2,"穿"),
-    rent(3,"房租"),
-    Call_charges(4,"话费"),
-    Humanity(5,"人情"),
-    other(6,"其他")
+    EAT(1,"吃"),
+    WEAR(2,"穿"),
+    RENT(3,"房租"),
+    CALL_CHARGES(4,"话费"),
+    HUMANITY(5,"人情"),
+    OTHER(6,"其他")
     ;
 
     private Integer code;

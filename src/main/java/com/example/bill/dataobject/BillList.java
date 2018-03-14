@@ -6,6 +6,7 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 /**
  * @author glacier
@@ -26,7 +27,7 @@ public class BillList {
     private Integer userId;
 
     /*金额*/
-    private float billMoney;
+    private BigDecimal billMoney;
 
     /*账单类别（1. 支出 2. 收入） 默认支出*/
     private Integer billType = BillStatusEnum.EXPENDITURE.getCode();
@@ -46,12 +47,11 @@ public class BillList {
     public BillList() {
     }
 
-    public BillList(Integer userId, float billMoney, Integer billType, Integer consumptionType, String consumptionSpace, String hasWho, String remark) {
+    public BillList(Integer userId, BigDecimal billMoney, Integer billType, Integer consumptionType, String hasWho, String remark) {
         this.userId = userId;
         this.billMoney = billMoney;
         this.billType = billType;
         this.consumptionType = consumptionType;
-        this.consumptionSpace = consumptionSpace;
         this.hasWho = hasWho;
         this.remark = remark;
     }

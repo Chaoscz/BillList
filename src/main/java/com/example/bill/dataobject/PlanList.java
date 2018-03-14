@@ -33,9 +33,8 @@ public class PlanList {
     public PlanList() {
     }
 
-    public PlanList(Integer userId, String planContent, Integer planType) {
+    public PlanList(Integer userId, String planContent) {
         this.userId = userId;
         this.planContent = planContent;
-        this.planType = planType;
     }
 }

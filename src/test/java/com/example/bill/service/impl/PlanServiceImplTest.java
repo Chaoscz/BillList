@@ -1,7 +1,6 @@
 package com.example.bill.service.impl;
 
-import com.example.bill.dataobject.BillList;
-import com.example.bill.repository.BillListRepository;
+import com.example.bill.dataobject.PlanList;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,41 +8,40 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 import static org.junit.Assert.*;
 
 /**
  * @author glacier
- * @Title: BillServiceImplTest
- * @Description: BillServiceImplTest
- * @date 2018/3/14 15:25
+ * @Title: ${file_name}
+ * @Description: ${todo}
+ * @date 2018/3/14 17:09
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class BillServiceImplTest {
+public class PlanServiceImplTest {
+
     @Autowired
-    private BillServiceImpl billService;
+    private PlanServiceImpl planService;
 
     @Test
     public void getOne() throws Exception {
-        BillList billList = billService.getOne(1);
-        Assert.assertNotNull(billList);
+        PlanList planList = planService.getOne(3);
+        Assert.assertNotNull(planList);
     }
 
     @Test
     public void findAll() throws Exception {
-        List<BillList> billListList = billService.findAll();
-        Assert.assertNotEquals(0,billListList.size());
+        List<PlanList> planListList = planService.findAll();
+        Assert.assertNotEquals(0,planListList.size());
     }
 
     @Test
     public void save() throws Exception {
-        BillList billList = new BillList(2,new BigDecimal(3.2),1,1,"常州","测试");
-        BillList result = billService.save(billList);
+        PlanList planList = new PlanList(2,"测试计划2");
+        PlanList result = planService.save(planList);
         Assert.assertNotNull(result);
-
     }
 
 }

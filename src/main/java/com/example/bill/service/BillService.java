@@ -17,5 +17,8 @@ public interface BillService {
 
     List<BillList> findAll();
 
+    List<BillList> findByLimit();
+
     BillList save(BillList billList);
+
 }

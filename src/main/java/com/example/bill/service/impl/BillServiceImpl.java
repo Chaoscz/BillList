@@ -4,6 +4,7 @@ import com.example.bill.dataobject.BillList;
 import com.example.bill.repository.BillListRepository;
 import com.example.bill.service.BillService;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,6 +30,12 @@ public class BillServiceImpl implements BillService{
     @Override
     public List<BillList> findAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public List<BillList> findByLimit() {
+        /*return repository.findByLimit();*/
+        return  null;
     }
 
     @Override

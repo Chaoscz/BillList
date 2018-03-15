@@ -55,4 +55,15 @@ public class BillList {
         this.hasWho = hasWho;
         this.remark = remark;
     }
+
+    public BillList(Integer id,Integer userId, BigDecimal billMoney, Integer billType, Integer consumptionType, String consumptionSpace, String hasWho, String remark) {
+        this.id = id;
+        this.userId = userId;
+        this.billMoney = billMoney;
+        this.billType = billType;
+        this.consumptionType = consumptionType;
+        this.consumptionSpace = consumptionSpace;
+        this.hasWho = hasWho;
+        this.remark = remark;
+    }
 }

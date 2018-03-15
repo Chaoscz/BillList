@@ -1,18 +1,17 @@
 package com.example.bill.service.impl;
 
 import com.example.bill.dataobject.BillList;
-import com.example.bill.repository.BillListRepository;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * @author glacier
@@ -39,11 +38,16 @@ public class BillServiceImplTest {
     }
 
     @Test
+    public void findByLimit() throws Exception {
+        List<BillList> billListList = billService.findByLimit();
+        Assert.assertNotEquals(0,billListList.size());
+    }
+
+    @Test
     public void save() throws Exception {
         BillList billList = new BillList(2,new BigDecimal(3.2),1,1,"常州","测试");
         BillList result = billService.save(billList);
         Assert.assertNotNull(result);
-
     }
 
 }

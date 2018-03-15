@@ -12,6 +12,8 @@ import lombok.Getter;
 public enum ResultStatusEnum {
 
     SUCCESS(200,"成功访问"),
+    CREATED(201,"创建或修改成功"),
+    INVALID_REQUEST(400,"请求出错"),
     NO_FIND(404,"网页不存在"),
     UNAVAILABLE(503,"服务不可用")
     ;

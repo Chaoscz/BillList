@@ -40,7 +40,7 @@ public class BillListController {
         result.setMsg(ResultStatusEnum.SUCCESS.getMessage());
 
         if (id == 0 ){
-            List<BillList> billListList = billService.findByLimit();
+            List<BillList> billListList = billService.findAll();
             result.setData(billListList);
             return result;
         }else {
@@ -50,6 +50,12 @@ public class BillListController {
             result.setData(resultList);
             return result;
         }
-
     }
+
+
+
+
+
+
+
 }

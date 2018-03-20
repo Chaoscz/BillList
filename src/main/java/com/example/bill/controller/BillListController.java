@@ -2,18 +2,16 @@ package com.example.bill.controller;
 
 import com.example.bill.VO.ResultVO;
 import com.example.bill.dataobject.BillList;
+import com.example.bill.dto.BillListDTO;
 import com.example.bill.enums.ResultStatusEnum;
-import com.example.bill.repository.BillListRepository;
 import com.example.bill.service.impl.BillServiceImpl;
+import com.example.bill.util.ResultVOUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 
 /**
  * @author glacier
@@ -52,10 +50,11 @@ public class BillListController {
         }
     }
 
-
-
-
-
+    @RequestMapping(value="/save",method=RequestMethod.POST)
+    public ResultVO saveBillList(@RequestBody BillListDTO billListDTO){
+        System.out.println(billListDTO);
+        return ResultVOUtil.success();
+    }
 
 
 }

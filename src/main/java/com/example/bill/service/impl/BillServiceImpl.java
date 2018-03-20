@@ -5,6 +5,8 @@ import com.example.bill.repository.BillListRepository;
 import com.example.bill.service.BillService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,13 +35,22 @@ public class BillServiceImpl implements BillService{
     }
 
     @Override
-    public List<BillList> findByLimit() {
-        /*return repository.findByLimit();*/
-        return  null;
+    public Page<BillList> findByLimit(Pageable pageable) {
+        return  repository.findAll(pageable);
     }
 
     @Override
     public BillList save(BillList billList) {
         return repository.save(billList);
+    }
+
+    @Override
+    public BillList update(BillList billList) {
+        return repository.save(billList);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        repository.deleteById(id);
     }
 }
